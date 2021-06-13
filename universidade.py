@@ -11,14 +11,11 @@ class Universidade:
         self.exatas = Departamento('Exatas')
 
     def listar_profs_de_sistemas_com_j(self):
-        print('profs de Sistemas com J: ')
-        
-        found = False
+        profs_com_j = []
 
         for prof in self.sistemas.profs:
             if 'j' in prof.name.lower():
-                print(prof.name, end=' ')
-                found = True
+                profs_com_j.append(prof.name)
 
-        if not found:
-            print('N/A')
+        print('Profs de Sistemas com J:',
+              ', '.join(profs_com_j) if len(profs_com_j) else 'N/A')
